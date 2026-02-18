@@ -18,7 +18,7 @@ class Solution {
 
         }
         sb.reverse();
-        return String.valueOf(sb);
+        return sb.toString();
         
     }
 }

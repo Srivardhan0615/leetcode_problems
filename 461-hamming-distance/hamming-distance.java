@@ -6,9 +6,8 @@ class Solution {
         int xor = x^y;
 
         while(xor > 0){
-            count +=xor & 1;
-
-            xor>>=1;
+            xor = xor & (xor - 1);
+            count++;
         }
         return count;
     }

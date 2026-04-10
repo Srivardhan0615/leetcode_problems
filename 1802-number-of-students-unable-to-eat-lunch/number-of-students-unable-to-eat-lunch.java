@@ -4,31 +4,24 @@ class Solution {
     public int countStudents(int[] students, int[] sandwiches) {
 
         Queue<Integer> stu = new LinkedList<>();
-        Stack<Integer> food = new Stack<>();
 
         for (int i : students) {
             stu.offer(i);
         }
-
-   
-        for (int i = sandwiches.length - 1; i >= 0; i--) {
-            food.push(sandwiches[i]);
-        }
-
+        int i = 0;
         int count = 0; 
-
         while (!stu.isEmpty() && count < stu.size()) {
 
-            if (stu.peek().equals(food.peek())) {
+            if(sandwiches[i] == stu.peek()){
                 stu.poll();
-                food.pop();
-                count = 0; 
-            } else {
+                count = 0;
+                i++;  
+            }else{
                 stu.offer(stu.poll());
                 count++;
             }
         }
 
-        return count; 
+        return count;
     }
 }

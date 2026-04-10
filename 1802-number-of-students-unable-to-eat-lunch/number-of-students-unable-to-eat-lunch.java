@@ -29,6 +29,6 @@ class Solution {
             }
         }
 
-        return stu.size(); 
+        return count; 
     }
 }

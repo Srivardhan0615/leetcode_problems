@@ -1,4 +1,4 @@
-import java.util.*;
+import java.lang.Math;
 class Solution {
     public int furthestDistanceFromOrigin(String moves) {
         
@@ -14,10 +14,6 @@ class Solution {
                 count++;
             }
         }
-        if(countR > countL){
-            return (countR - countL + count);
-        }else{
-            return (countL - countR + count);
-        }
+        return Math.abs(countR - countL) + count;
     }
 }

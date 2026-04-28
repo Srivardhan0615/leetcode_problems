@@ -1,9 +1,21 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int ans = nums.length;
-        for(int i = 0; i < nums.length; i++){
-            ans ^= (i ^ nums[i]);
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i : nums){
+            list.add(i);
         }
-        return ans;
+
+        int n = nums.length;
+
+        for(int i = 0; i <= n; i++){
+            if(!list.contains(i)){
+                return i;
+            }
+        }
+
+        return -1;
+        
     }
 }

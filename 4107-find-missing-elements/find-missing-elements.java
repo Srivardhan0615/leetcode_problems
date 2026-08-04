@@ -4,31 +4,22 @@ class Solution {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
-        List<Integer> list = new ArrayList<>();
         HashSet<Integer> set = new HashSet<>();
 
-        for(int i : nums){
-            if(i < min){
-                min = i;
+        for (int num : nums) {
+            min = Math.min(min, num);
+            max = Math.max(max, num);
+            set.add(num);
+        }
+
+        List<Integer> ans = new ArrayList<>();
+
+        for (int i = min; i <= max; i++) {
+            if (!set.contains(i)) {
+                ans.add(i);
             }
         }
 
-        for(int i : nums){
-            if(i > max){
-                max = i;
-            }
-        }
-
-        for(int i : nums){
-            set.add(i);
-        }
-
-        for(int i = min; i <= max; i++){
-            if(set.contains(i) == false){
-                list.add(i);
-            }
-        }
-        return list;
-        
+        return ans;
     }
 }

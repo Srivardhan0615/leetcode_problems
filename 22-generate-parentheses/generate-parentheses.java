@@ -1,7 +1,5 @@
 class Solution {
 
-    
-
     public List<String> generateParenthesis(int n) {
         List<String> list = new ArrayList<>();
         generate("",0,0,n, list);

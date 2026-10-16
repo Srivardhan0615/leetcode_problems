@@ -12,7 +12,7 @@ class Solution {
             }else{
                 int inside = stack.pop();
 
-                int score;
+                int score = 0;
 
                 if(inside == 0){
                     
